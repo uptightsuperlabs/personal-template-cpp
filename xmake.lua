@@ -24,10 +24,9 @@ do
     add_rules("mode.releasedbg", "mode.debug", "mode.release");
     set_languages(build_ver);
 
-    target("frontend") do
-        set_basename(build_name);
+    target(build_name) do
         set_kind("binary");
-        add_files("frontend/*.cpp", "assets/placeholder.rc");
+        add_files("src/*.cpp", "assets/placeholder.rc");
         add_packages(table.unpack(_packages));
     end
 end
